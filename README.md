@@ -1,1 +1,1 @@
-Beginner Python Weather API APP 
+Beginner Python Weather API App
