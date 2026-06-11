@@ -3,10 +3,12 @@ import sys
 import requests 
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 
 class WeatherApp(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowIcon(QIcon("assets/cloudy.png"))
         self.city_label = QLabel("Enter city name: ", self)
         self.city_input = QLineEdit(self)
         self.get_weather_button = QPushButton("Get Weather", self)
@@ -46,7 +48,37 @@ class WeatherApp(QWidget):
             QLabel, QPushButton{
                 font-family: calibri;
             }
+            QLabel#city_label{
+                font-size: 40px;
+                font-style: italic;
+            }
+            QLineEdit#city_input{
+                font-size: 40px;            
+            }
+            QPushButton#get_weather_button{
+                font-size: 30px;       
+                font-weight: bold;        
+            }
+            QLabel#temperature_label{
+                font-size: 75px;               
+            }
+            QLabel#emoji_label{
+                font-size: 100px;
+                font-family: Segoe UI emoji;
+            }
+            QLabel#description_label{
+                font-size: 50px;        
+            }
         """)
+
+    def get_weather(self):
+        pass
+
+    def display_error(self, message):
+        pass
+
+    def display_weather(self, data):
+        pass
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
